@@ -55,9 +55,11 @@ var path embed.FS
 
 func TestPathMatcher(t *testing.T) {
 	dirEntryies, _ := path.ReadDir("files")
-	for _, entry := range dirEntryies {
+	for _, entry := range dirEntryies { // loop directory
 		if !entry.IsDir() {
 			fmt.Println(entry.Name()) // print all files name
+			file, _ := path.ReadFile("files/" + entry.Name())
+			fmt.Println(string(file)) // print content of file
 		}
 	}
 }
