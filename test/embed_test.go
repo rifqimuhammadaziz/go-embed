@@ -1,4 +1,4 @@
-package goembed
+package test
 
 import (
 	"embed"
